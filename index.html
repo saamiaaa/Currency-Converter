@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <link href="style.css" rel="stylesheet">
+
+    <title>CurrenSee | Currency Converter</title>
+</head>
+
+<body>
+
+    <!-- Background decorations -->
+    <div class="background-shapes">
+        <!-- Floating particles -->
+<div class="particles">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+        <span class="orb orb-one"></span>
+        <span class="orb orb-two"></span>
+        <span class="orb orb-three"></span>
+
+        <span class="glass-shape shape-one"></span>
+        <span class="glass-shape shape-two"></span>
+        <span class="glass-shape shape-three"></span>
+    </div>
+
+    <!-- Main content -->
+    <main class="container">
+
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fa-solid fa-earth-americas"></i>
+                <span>currensee.</span>
+            </div>
+
+            <div class="nav-links">
+                <a href="#">Converter</a>
+                <a href="#">Exchange Rates</a>
+                <a href="#">About</a>
+            </div>
+        </nav>
+
+        <section class="hero">
+            <div class="hero-text">
+                <span class="eyebrow">
+                    <i class="fa-solid fa-globe"></i>
+                    YOUR MONEY, EVERYWHERE
+                </span>
+
+                <h1>The world is<br>your currency.</h1>
+
+                <p>
+                    Convert currencies effortlessly.
+                    Explore exchange rates from around the world.
+                </p>
+            </div>
+
+            <div class="converter-card">
+
+                <div class="card-heading">
+                    <div>
+                        <span class="card-label">CURRENCY CONVERTER</span>
+                        <h2>Make your exchange.</h2>
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right-arrow-left card-icon"></i>
+                </div>
+
+                <form>
+
+                    <div class="amount">
+                        <p>YOU SEND</p>
+                        <div class="amount-input">
+                            <span>$</span>
+                            <input id="amount" value="100" type="number" min="0" />
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+
+                        <div class="from">
+                            <p>FROM</p>
+
+                            <div class="selectContainer">
+                                <img src="https://flagsapi.com/US/flat/64.png" alt="US flag" />
+
+                                <select name="from" class="from-select">
+                                    <option value="USD" selected>USD</option>
+                                    <option value="BDT">BDT</option>
+                                    <option value="INR">INR</option>
+                                    <option value="EUR">EUR</option>
+                                    <option value="AUD">AUD</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="button" class="swap-button" aria-label="Swap currencies">
+                            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                        </button>
+
+                        <div class="to">
+                            <p>TO</p>
+
+                            <div class="selectContainer">
+                                <img src="https://flagsapi.com/BD/flat/64.png" alt="Bangladesh flag" />
+
+                                <select name="to" class="to-select">
+                                    <option value="USD">USD</option>
+                                    <option value="BDT" selected>BDT</option>
+                                    <option value="INR">INR</option>
+                                    <option value="EUR">EUR</option>
+                                    <option value="AUD">AUD</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="message">
+                        <div>
+                            <span class="rate-label">EXCHANGE RATE</span>
+                            <p>1 USD = 124.53 BDT</p>
+                        </div>
+
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+
+                    <button type="submit" class="convert-button">
+                        Get Exchange Rate
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                    <div class="last-updated">
+                        <i class="fa-regular fa-clock"></i>
+                        Rates are indicative
+                    </div>
+
+                </form>
+
+            </div>
+        </section>
+
+        <footer>
+            <p>MADE FOR A WORLD WITHOUT BORDERS.</p>
+            <span>currensee. © 2026</span>
+        </footer>
+
+    </main>
+
+</body>
+</html>
