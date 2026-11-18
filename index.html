@@ -95,7 +95,7 @@
                         <p>YOU SEND</p>
                         <div class="amount-input">
                             <span>$</span>
-                            <input id="amount" value="100" type="number" min="0" />
+                            <input id="amount" value="1" type="number" />
                         </div>
                     </div>
 
@@ -105,14 +105,9 @@
                             <p>FROM</p>
 
                             <div class="selectContainer">
-                                <img src="https://flagsapi.com/US/flat/64.png" alt="US flag" />
+                                <img src="https://flagsapi.com/US/flat/64.png" />
 
-                                <select name="from" class="from-select">
-                                    <option value="USD" selected>USD</option>
-                                    <option value="BDT">BDT</option>
-                                    <option value="INR">INR</option>
-                                    <option value="EUR">EUR</option>
-                                    <option value="AUD">AUD</option>
+                                <select name="from" class="from">
                                 </select>
                             </div>
                         </div>
@@ -125,14 +120,9 @@
                             <p>TO</p>
 
                             <div class="selectContainer">
-                                <img src="https://flagsapi.com/BD/flat/64.png" alt="Bangladesh flag" />
+                                <img src="https://flagsapi.com/BD/flat/64.png" />
 
-                                <select name="to" class="to-select">
-                                    <option value="USD">USD</option>
-                                    <option value="BDT" selected>BDT</option>
-                                    <option value="INR">INR</option>
-                                    <option value="EUR">EUR</option>
-                                    <option value="AUD">AUD</option>
+                                <select name="to" class="to">
                                 </select>
                             </div>
                         </div>
@@ -142,13 +132,13 @@
                     <div class="message">
                         <div>
                             <span class="rate-label">EXCHANGE RATE</span>
-                            <p>1 USD = 124.53 BDT</p>
+                            <p id="exchangeRate">1 USD = 124.53 BDT</p>
                         </div>
 
                         <i class="fa-solid fa-chart-line"></i>
                     </div>
 
-                    <button type="submit" class="convert-button">
+                    <button type="submit" class="convertButton">
                         Get Exchange Rate
                         <i class="fa-solid fa-arrow-right"></i>
                     </button>
@@ -169,6 +159,7 @@
         </footer>
 
     </main>
-
+<script src="codes.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

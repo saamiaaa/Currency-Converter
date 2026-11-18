@@ -1,6 +1,6 @@
 
 const BASE_URL =
-  "https:cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json?utm_source=chatgpt.com";
+  "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies";
 
 const dropdown = document.querySelectorAll(".dropdown select");
 const button = document.querySelector(".convertButton");
@@ -28,6 +28,27 @@ for (let select of dropdown) {
     });
 }
 
+const updateExchangeRate = async () => {
+    let amount = document.querySelector(".amount input");
+    let amountValue = amount.value;
+
+    if (amountValue === "" || amountValue < 1) {
+        amountValue = 1;
+        amount.value = "1";
+    }
+
+    const URL = `${BASE_URL}/${fromCurrency.value.toLowerCase()}.json`;
+
+    let response = await fetch(URL);
+    let data = await response.json();
+
+    let rate = data[fromCurrency.value.toLowerCase()][toCurrency.value.toLowerCase()];
+
+    let finalAmount = amountValue * rate;
+
+    message.innerText = `${amountValue} ${fromCurrency.value} = ${finalAmount.toFixed(2)} ${toCurrency.value}`;
+}
+
 const updateFlag = (element) => {
     let currencyCode = element.value;
     let countryCode = countryList[currencyCode];
@@ -37,25 +58,12 @@ const updateFlag = (element) => {
     img.src = newSource;
 };
 
-button.addEventListener("click", async (evt) => {
+
+button.addEventListener("click", (evt) => {
     evt.preventDefault();
+    updateExchangeRate();
+});
 
-    let amount = document.querySelector(".amount input");
-    let amountValue = amount.value;
-
-    if (amountValue === "" || amountValue < 1) {
-        amountValue = 1;
-        amount.value = "1";
-    }
-
-    const URL = `${BASE_URL}/${fromCurrency.value.toLowerCase()}/${toCurrency.value.toLowerCase()}.json`;
-
-    let response = await fetch(URL);
-    let data = await response.json();
-
-    let rate = data[toCurrency.value.toLowerCase()];
-
-    let finalAmount = amountValue * rate;
-
-    message.innerText = `${amountValue} ${fromCurrency.value} = ${finalAmount} ${toCurrency.value}`;
+window.addEventListener("load", () => {
+    updateExchangeRate();
 });
