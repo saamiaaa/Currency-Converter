@@ -7,6 +7,7 @@ const button = document.querySelector(".convertButton");
 const fromCurrency = document.querySelector("select[name='from']");
 const toCurrency = document.querySelector("select[name='to']");
 const message = document.querySelector("#exchangeRate");
+const swapButton = document.querySelector(".swap-button");
 
 for (let select of dropdown) {
     for (let currencyCode in countryList) {
@@ -58,6 +59,19 @@ const updateFlag = (element) => {
     img.src = newSource;
 };
 
+swapButton.addEventListener("click", () => {
+
+    let temp = fromCurrency.value;
+
+    fromCurrency.value = toCurrency.value;
+    toCurrency.value = temp;
+
+    updateFlag(fromCurrency);
+    updateFlag(toCurrency);
+
+    updateExchangeRate();
+
+});
 
 button.addEventListener("click", (evt) => {
     evt.preventDefault();
